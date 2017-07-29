@@ -1,4 +1,4 @@
 Flask==0.12.2
 google-cloud-pubsub==0.26.0
 gunicorn==19.7.1
-google-api-python-client=1.6.2
+google-api-python-client==1.6.2
