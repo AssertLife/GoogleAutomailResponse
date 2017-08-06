@@ -19,7 +19,6 @@ def ProcessNotification(service,
                                      startHistoryId=startHistoryId)
 
     for h in hlist:
-        print(h)
     	for madd in h['messagesAdded']:
             message = messages.get.GetMessage(service, mdata['emailAddress'], madd['message']['id'], mformat='raw')
             mime_msg = email.message_from_string(base64.urlsafe_b64decode(message['raw'].encode('ASCII')))
@@ -42,7 +41,5 @@ def ProcessNotification(service,
     			body)
     	    
     	    ret = messages.send.SendMessage(service, mdata['emailAddress'], {'raw': base64.urlsafe_b64encode(mmhtml.as_string())})
-    	    if ret is None:
-                print(ret)
 
     return mdata['historyId']
